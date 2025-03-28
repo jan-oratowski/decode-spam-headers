@@ -4,3 +4,5 @@ packaging
 dnspython
 requests
 colorama
+flask
+waitress

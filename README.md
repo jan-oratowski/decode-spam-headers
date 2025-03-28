@@ -696,7 +696,79 @@ This and other projects are outcome of sleepless nights and **plenty of hard wor
 
 ---
 
+# Email Header Analyzer Web Application
+
+This web application allows you to analyze spam-related headers in email files (EML format) through a user-friendly web interface.
+
+## Features
+
+- Drag and drop file upload
+- Support for EML files up to 16MB
+- Real-time file validation
+- Beautiful and responsive UI
+- Detailed analysis of spam-related headers
+- HTML output with color-coded results
+
+## Installation
+
+1. Clone this repository:
+```bash
+git clone https://github.com/yourusername/decode-spam-headers.git
+cd decode-spam-headers
 ```
+
+2. Create a virtual environment (recommended):
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+3. Install the required packages:
+```bash
+pip install -r requirements.txt
+```
+
+## Development Usage
+
+For development and testing:
+
+1. Start the Flask development server:
+```bash
+python app.py
+```
+
+2. Open your web browser and navigate to:
+```
+http://localhost:5000
+```
+
+## Production Deployment
+
+For production use, use Waitress as the WSGI server (recommended for Windows):
+
+1. Start the application with Waitress:
+```bash
+waitress-serve --host=0.0.0.0 --port=8000 wsgi:app
+```
+
+2. The application will be available at:
+```
+http://localhost:8000
+```
+
+Additional Waitress options:
+- `--threads 4`: Number of threads to use (default: 4)
+- `--connection-limit 1000`: Maximum number of concurrent connections (default: 1000)
+- `--url-scheme http`: URL scheme to use (default: http)
+
+Example with all options:
+```bash
+waitress-serve --host=0.0.0.0 --port=8000 --threads 4 --connection-limit 1000 --url-scheme http wsgi:app
+```
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
 Mariusz Banach / mgeeky, (@mariuszbit)
 <mb [at] binary-offensive.com>
-```
